@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FocusFlow Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- WELCOME -->
+<div id="welcome" class="screen active">
+  <div class="card">
+    <h1>FocusFlow</h1>
+    <p>Enter your name</p>
+    <input id="nameInput" placeholder="Your name">
+    <button onclick="enterApp()">Start</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="screen">
+
+  <h2 id="userText"></h2>
+
+  <div class="card main">
+
+    <div id="timer">00:00:00</div>
+
+    <div class="inputs">
+      <input id="h" placeholder="hh">
+      <input id="m" placeholder="mm">
+      <input id="s" placeholder="ss">
+    </div>
+
+    <div class="presets">
+      <button onclick="setPreset(25)">25m</button>
+      <button onclick="setPreset(60)">1h</button>
+      <button onclick="setPreset(120)">2h</button>
+    </div>
+
+    <div class="buttons">
+      <button class="start" onclick="start()">Start</button>
+      <button class="stop" onclick="stop()">Stop</button>
+      <button onclick="setTime()">Set</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <button class="focusBtn" onclick="toggleFocus()">Focus Mode</button>
+    <button class="alarmBtn" onclick="stopAlarm()">Stop Alarm</button>
+
+    <p id="session">Session: 0 min</p>
+    <p id="status">Ready</p>
+
+  </div>
+
+  <!-- CHART -->
+  <div class="chartBox">
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
